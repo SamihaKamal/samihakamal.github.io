@@ -4,6 +4,17 @@ import * as React from "react"
 import { SVGProps } from "react"
 import {motion} from "framer-motion";
 
+const BUBBLESTARS = [
+  { id: "Ellipse 1", cx: 970.5, cy: 957, rx: 65.5, ry: 66, fill: "#1A1A1A" },
+  { id: "Ellipse 9", cx: 2622.5, cy: 4159, rx: 32.5, ry: 33, fill: "#1A1A1A" },
+  { id: "Ellipse 8", cx: 2429.5, cy: 4225, rx: 65.5, ry: 66, fill: "#1A1A1A" },
+  { id: "Ellipse 2", cx: 6161, cy: 3025, rx: 51, ry: 46, fill: "#1A1A1A" },
+  { id: "Ellipse 5", cx: 6365, cy: 3044, rx: 98, ry: 99, fill: "#1A1A1A" },
+  { id: "Ellipse 7", cx: 647, cy: 773, rx: 98, ry: 99, fill: "#1A1A1A" },
+  { id: "Ellipse 6", cx: 6267, cy: 1411, rx: 98, ry: 99, fill: "#1A1A1A" },
+  { id: "Ellipse 4", cx: 95, cy: 3571, rx: 51, ry: 46, fill: "#1A1A1A" },
+  { id: "Ellipse 3", cx: 6212, cy: 727, rx: 51, ry: 46, fill: "#1A1A1A" },
+]
 const BubbleSVG = (props: SVGProps<SVGSVGElement>) => (
   <svg
     // width={6463}
@@ -116,132 +127,22 @@ const BubbleSVG = (props: SVGProps<SVGSVGElement>) => (
         />
       </motion.g>
       <g id="Bubbles">
-        <motion.ellipse
-          id="Ellipse 1"
-          cx={970.5}
-          cy={957}
-          rx={65.5}
-          ry={66}
-          fill="#1A1A1A"
-          initial={{y: 1200, opacity: 0.8}}
-          animate={{ y: -900, opacity: 0}}
+        {BUBBLESTARS.map((path, idx) => (
+          <motion.ellipse 
+          key={path.id}
+          id={path.id}
+          cx={path.cx}
+          cy={path.cy}
+          rx={path.rx}
+          ry={path.ry}
+          fill={path.fill}
+          animate={{y: [1200, -900], opacity: [0,8,0]}}
           transition={{
-            duration: 3,
+            duration: 1+idx/BUBBLESTARS.length,
             repeat: Infinity,
           }}
-        />
-        <motion.ellipse
-          id="Ellipse 9"
-          cx={2622.5}
-          cy={4159}
-          rx={32.5}
-          ry={33}
-          fill="#1A1A1A"
-          initial={{y: 1200, opacity: 0.8}}
-          animate={{ y: -900, opacity: 0}}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-          }}
-        />
-        <motion.ellipse
-          id="Ellipse 8"
-          cx={2429.5}
-          cy={4225}
-          rx={65.5}
-          ry={66}
-          fill="#1A1A1A"
-          initial={{y: 1200, opacity: 0.8}}
-          animate={{ y: -900, opacity: 0}}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-          }}
-        />
-        <motion.ellipse
-          id="Ellipse 2"
-          cx={6161}
-          cy={3025}
-          rx={51}
-          ry={46}
-          fill="#1A1A1A"
-          initial={{y: 1200, opacity: 0.8}}
-          animate={{ y: -900, opacity: 0}}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-          }}
-        />
-        <motion.ellipse
-          id="Ellipse 5"
-          cx={6365}
-          cy={3044}
-          rx={98}
-          ry={99}
-          fill="#1A1A1A"
-          initial={{y: 1200, opacity: 0.8}}
-          animate={{ y: -900, opacity: 0}}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-          }}
-        />
-        <motion.ellipse
-          id="Ellipse 7"
-          cx={647}
-          cy={773}
-          rx={98}
-          ry={99}
-          fill="#1A1A1A"
-          initial={{y: 1200, opacity: 0.8}}
-          animate={{ y: -900, opacity: 0}}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-          }}
-        />
-        <motion.ellipse
-          id="Ellipse 6"
-          cx={6267}
-          cy={1411}
-          rx={98}
-          ry={99}
-          fill="#1A1A1A"
-          initial={{y: 1200, opacity: 0.8}}
-          animate={{ y: -900, opacity: 0}}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-          }}
-        />
-        <motion.ellipse
-          id="Ellipse 4"
-          cx={95}
-          cy={3571}
-          rx={51}
-          ry={46}
-          fill="#1A1A1A"
-          initial={{y: 1200, opacity: 0.8}}
-          animate={{ y: -900, opacity: 0}}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-          }}
-        />
-        <motion.ellipse
-          id="Ellipse 3"
-          cx={6212}
-          cy={727}
-          rx={51}
-          ry={46}
-          fill="#1A1A1A"
-          initial={{y: 1200, opacity: 0.8}}
-          animate={{ y: -900, opacity: 0}}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-          }}
-        />
+          />
+        ))}
         <motion.circle
           id="Ellipse 10"
           cx={95}
@@ -250,8 +151,7 @@ const BubbleSVG = (props: SVGProps<SVGSVGElement>) => (
           fill="#D9D9D9"
           stroke="black"
           strokeWidth={10}
-          initial={{y: 1200, opacity: 0.8}}
-          animate={{ y: -900, opacity: 0}}
+          animate={{y: [1200, -900], opacity: [0,8,0]}}
           transition={{
             duration: 3,
             repeat: Infinity,
@@ -265,10 +165,9 @@ const BubbleSVG = (props: SVGProps<SVGSVGElement>) => (
           fill="#D9D9D9"
           stroke="black"
           strokeWidth={10}
-          initial={{y: 1200, opacity: 0.8}}
-          animate={{ y: -900, opacity: 0}}
+          animate={{y: [1200, -900], opacity: [0,8,0]}}
           transition={{
-            duration: 3,
+            duration: 6,
             repeat: Infinity,
           }}
         />
@@ -280,10 +179,9 @@ const BubbleSVG = (props: SVGProps<SVGSVGElement>) => (
           fill="#D9D9D9"
           stroke="black"
           strokeWidth={10}
-          initial={{y: 1200, opacity: 0.8}}
-          animate={{ y: -900, opacity: 0}}
+          animate={{y: [1200, -900], opacity: [0,8,0]}}
           transition={{
-            duration: 3,
+            duration: 2,
             repeat: Infinity,
           }}
         />
@@ -295,10 +193,9 @@ const BubbleSVG = (props: SVGProps<SVGSVGElement>) => (
           fill="#D9D9D9"
           stroke="black"
           strokeWidth={10}
-          initial={{y: 1200, opacity: 0.8}}
-          animate={{ y: -900, opacity: 0}}
+          animate={{y: [1200, -900], opacity: [0,8,0]}}
           transition={{
-            duration: 3,
+            duration: 1,
             repeat: Infinity,
           }}
         />
@@ -308,8 +205,7 @@ const BubbleSVG = (props: SVGProps<SVGSVGElement>) => (
           fill="#D9D9D9"
           stroke="black"
           strokeWidth={10}
-          initial={{y: 1200, opacity: 0.8}}
-          animate={{ y: -900, opacity: 0}}
+          animate={{y: [1200, -900], opacity: [0,8,0]}}
           transition={{
             duration: 3,
             repeat: Infinity,
@@ -323,10 +219,9 @@ const BubbleSVG = (props: SVGProps<SVGSVGElement>) => (
           fill="#D9D9D9"
           stroke="black"
           strokeWidth={10}
-          initial={{y: 1200, opacity: 0.8}}
-          animate={{ y: -900, opacity: 0}}
+          animate={{y: [1200, -900], opacity: [0,8,0]}}
           transition={{
-            duration: 3,
+            duration: 1,
             repeat: Infinity,
           }}
         />
