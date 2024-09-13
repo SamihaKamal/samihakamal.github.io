@@ -4,7 +4,7 @@ import LinkedInPic from "./images/LinkedIn Pic.jpg";
 import WavesSVG from "./SVGComponents/waves";
 import { motion, useScroll, useAnimation } from "framer-motion";
 import { useRouter } from "next/navigation";
-import { LoremIpsum } from "./loremipsum";
+import { Projects } from "./components/projects";
 import { AboutMe } from "./components/aboutme";
 
 export default function Home() {
@@ -51,7 +51,7 @@ export default function Home() {
         />
       </div>
       <div className="flex-1 flex items-center justify-center p-8">
-        <div className="pr-10">
+        <div className="mr-10">
           <AboutMe />
         </div>
       </div>
@@ -60,7 +60,7 @@ export default function Home() {
     {/* Third section projects */}
     <section className="flex min-h-screen">
       <div className="flex-1 flex items-center justify-center">
-       <p>Projects</p>
+       <Projects />
       </div>
     </section>
 
