@@ -30,7 +30,7 @@ export default function Home() {
         className="absolute top-0 left-0"
         style={{ transform: "translateY(-75%) translateX(-30%)", width: "200vw" }}
       >
-        <WavesSVG />
+        {/* <WavesSVG /> */}
       </motion.div>
       <div className="text-center">
         <h1 className="text-9xl font-bold text-slate-300" style={{ fontFamily: "Poppins" }}>
@@ -39,7 +39,7 @@ export default function Home() {
       </div>
     </section>
 
-    {/* Second Section: Image and Lorem Ipsum */}
+    {/* Second Section: Image and Lorem Ipsum + Contact me*/}
     <section className="flex min-h-screen">
       <div className="flex-1 flex items-center justify-center">
         <Image 
@@ -51,7 +51,23 @@ export default function Home() {
         />
       </div>
       <div className="flex-1 flex items-center justify-center p-8">
-        <AboutMe />
+        <div className="pr-10">
+          <AboutMe />
+        </div>
+      </div>
+    </section>
+
+    {/* Third section projects */}
+    <section className="flex min-h-screen">
+      <div className="flex-1 flex items-center justify-center">
+       <p>Projects</p>
+      </div>
+    </section>
+
+    {/* Fourth section experience and skills*/}
+    <section className="flex min-h-screen">
+      <div className="flex-1 flex items-center justify-center">
+       <p>Experience</p>
       </div>
     </section>
   </motion.main>
