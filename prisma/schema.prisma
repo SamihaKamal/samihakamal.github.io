@@ -14,6 +14,7 @@ model Project {
   id Int @id @default(autoincrement())
   name String
   description String
+  features String
   github String
   images Image[]
   createdAt DateTime @default(now())
