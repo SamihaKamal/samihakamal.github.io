@@ -14,6 +14,14 @@ model Project {
   id Int @id @default(autoincrement())
   name String
   description String
-  images String?
-  time DateTime 
+  github String
+  images Image[]
+  createdAt DateTime @default(now())
+}
+
+model Image {
+  id Int @id @default(autoincrement())
+  url String
+  project Project @relation(fields: [projectId], references: [id])
+  projectId Int
 }
