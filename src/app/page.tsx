@@ -9,7 +9,11 @@ import { ProjectCard } from "./components/projectCard";
 export default async function Home() {
 
 
-  const projects = await prisma.project.findMany()
+  const projects = await prisma.project.findMany({
+    include: {
+      images: true,
+    }
+  })
 
  
   return (
@@ -50,7 +54,7 @@ export default async function Home() {
 
     {/* Third section projects */}
     <section className="flex min-h-screen">
-      <div className="flex-1 flex items-center justify-center">
+      <div className="flex-1 flex items-center justify-center space-x-9">
        {projects.map(a =>(
         <ProjectCard key={a.id} {...a} />
        ))}
