@@ -1,37 +1,28 @@
-"use client"
+
 import Image from "next/image";
 import LinkedInPic from "./images/LinkedIn Pic.jpg";
-import WavesSVG from "./SVGComponents/waves";
-import { motion, useScroll, useAnimation } from "framer-motion";
-import { useRouter } from "next/navigation";
-import { Projects } from "./components/projects";
+
+import { prisma } from "@/db";
 import { AboutMe } from "./components/aboutme";
+import { ProjectCard } from "./components/projectCard";
 
-export default function Home() {
-  const controls = useAnimation();
-  const router = useRouter();
+export default async function Home() {
 
-  const handleScroll = async () => {
-    await controls.start({
-      y: -window.innerHeight,
-      transition: { duration: 1, ease: "easeInOut"},
-    });
-    router.push("/aboutme");
-  }
+
+  const projects = await prisma.project.findMany()
+
+ 
   return (
-    <motion.main 
-    className="bg-regal-blue relative min-h-screen min-w-screen overflow-hidden flex flex-col"
-    initial={{ y: 0 }}
-    animate={controls}
-  >
+    <main 
+    className="bg-regal-blue relative min-h-screen min-w-screen overflow-hidden flex flex-col">
     {/* First Section: My Portfolio Text and Waves */}
     <section className="flex flex-col items-center justify-center min-h-screen relative">
-      <motion.div
+      <div
         className="absolute top-0 left-0"
         style={{ transform: "translateY(-75%) translateX(-30%)", width: "200vw" }}
       >
         {/* <WavesSVG /> */}
-      </motion.div>
+      </div>
       <div className="text-center">
         <h1 className="text-9xl font-bold text-slate-300" style={{ fontFamily: "Poppins" }}>
           My portfolio
@@ -60,7 +51,9 @@ export default function Home() {
     {/* Third section projects */}
     <section className="flex min-h-screen">
       <div className="flex-1 flex items-center justify-center">
-       <Projects />
+       {projects.map(a =>(
+        <ProjectCard key={a.id} {...a} />
+       ))}
       </div>
     </section>
 
@@ -70,6 +63,6 @@ export default function Home() {
        <p>Experience</p>
       </div>
     </section>
-  </motion.main>
+  </main>
   );
 }
