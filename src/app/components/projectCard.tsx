@@ -1,6 +1,7 @@
 "use client"
 import Image, { getImageProps } from "next/image";
 import LinkedInPic from "../images/LinkedIn Pic.jpg";
+import { Carousel } from "./carousel";
 import { useState } from "react";
 
 
@@ -33,22 +34,25 @@ export function ProjectCard({id, name, description, features, github, images}:pr
     
         return(
             <div onClick={closeModal} className="fixed left-0 top-0 flex h-full w-full items-center justify-center bg-black bg-opacity-50 py-1 z-50">
-                    <div className="max-h-full w-full max-w-xl overflow-y-auto sm:rounded-2xl bg-white flex">
+                    <div className="max-h-full w-full max-w-4xl overflow-y-auto sm:rounded-2xl bg-white flex">
                         <div className="w-1/2 flex items-center justify-center p-4">
-                            <Image 
-                            className="w-full h-auto max-w-md"
-                            width={500}
-                            height={500}
-                            src={directLinks[0] as string}
-                            alt="Picture of myself"/>
+                            
+                            <Carousel images={images}/>
                         </div>
                         <div className="w-1/2 p-8 flex flex-col justify-between">
                             <div>
-                                <h1 className="mb-4 text-3xl font-extrabold">Turn on notifications</h1>
-                                <p className="text-gray-600">Get the most out of Twitter by staying up to date with what's happening.</p>
+                                <h1 className="mb-4 text-3xl font-extrabold">{name}</h1>
+                                <p className="text-gray-600">{description}</p>
+                                <br></br>
+                                <hr />
+                                <br></br>
+                                <h2 className="mb-4 text-2xl font-extrabold">Features</h2>
+                                <p className="text-gray-600">{features}</p>
+                                <br></br>
                             </div>
-                            <div className="mt-8 space-y-4">
-                                <button onClick={closeModal} className="p-3 bg-white border rounded-full w-full font-semibold">Skip for now</button>
+                            <div className="flex space-x-4">
+                            <a href={github} className="p-3 bg-black rounded-full text-center text-white w-full font-semibold">Github Link</a>
+                                <button onClick={closeModal} className="p-3 bg-white border rounded-full w-full font-semibold">Close</button>
                             </div>
                         </div>
                                         
