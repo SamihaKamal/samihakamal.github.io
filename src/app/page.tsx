@@ -5,6 +5,7 @@ import LinkedInPic from "./images/LinkedIn Pic.jpg";
 import { prisma } from "@/db";
 import { AboutMe } from "./components/aboutme";
 import { ProjectCard } from "./components/projectCard";
+import { Timeline } from "./components/timeline";
 
 export default async function Home() {
 
@@ -54,7 +55,7 @@ export default async function Home() {
 
     {/* Third section projects */}
     <section className="flex min-h-screen">
-      <div className="flex-1 flex items-center justify-center space-x-9">
+      <div className="flex-1 flex flex-wrap items-center justify-center space-x-9">
        {projects.map(a =>(
         <ProjectCard key={a.id} {...a} />
        ))}
@@ -64,7 +65,7 @@ export default async function Home() {
     {/* Fourth section experience and skills*/}
     <section className="flex min-h-screen">
       <div className="flex-1 flex items-center justify-center">
-       <p>Experience</p>
+       <Timeline />
       </div>
     </section>
   </main>
