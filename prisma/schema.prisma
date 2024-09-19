@@ -20,9 +20,26 @@ model Project {
   createdAt DateTime @default(now())
 }
 
+model Experience {
+  id Int @id @default(autoincrement())
+  role String
+  company String
+  description String
+  skills Tag[]
+  from DateTime
+  to DateTime?
+}
+
 model Image {
   id Int @id @default(autoincrement())
   url String
   project Project @relation(fields: [projectId], references: [id])
   projectId Int
+}
+
+model Tag{
+  id Int @id @default(autoincrement())
+  name String
+  experience Experience @relation(fields: [experienceId], references: [id])
+  experienceId Int
 }
