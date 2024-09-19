@@ -26,7 +26,7 @@ export function Carousel({ images }: CarouselProps) {
 
 
     return (
-        <main>
+        <div>
             <div id="default-carousel" className="relative" data-carousel="static">
                 <div className="overflow-hidden relative rounded-lg ">
                     {images.map((image, index) => (
@@ -61,6 +61,6 @@ export function Carousel({ images }: CarouselProps) {
                 </button>
             </div>
             <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
-        </main>
+        </div>
     );
 }

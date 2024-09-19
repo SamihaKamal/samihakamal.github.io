@@ -2,7 +2,7 @@ import styles from './aboutmestyle.module.css';
 
 export function AboutMe(){
     return(
-        <main>
+        <div>
             <p className={styles.paragraph}>My name is Samiha Kamal, I am currently working at FDM in their software engineering graduate
                 programme.
             </p>
@@ -33,7 +33,7 @@ export function AboutMe(){
             </div>
             
             
-        </main>
+        </div>
     )
     
 }

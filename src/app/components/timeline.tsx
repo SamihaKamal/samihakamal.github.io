@@ -13,7 +13,7 @@ export async function Timeline(){
 
 
     return (
-        <main>
+        <div>
             <div className="absolute bottom-[10rem] left-0 right-0 flex justify-between items-center px-4">
                 <div className="relative w-full bg-gray-300 h-1">
                 {/* Timeline line */}
@@ -29,6 +29,6 @@ export async function Timeline(){
                 </div>
                 </div>
             </div>
-        </main>
+        </div>
     )
 }
