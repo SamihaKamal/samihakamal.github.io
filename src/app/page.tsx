@@ -55,7 +55,7 @@ export default async function Home() {
         <div className="flex items-center justify-center w-full mt-40">
           <TimelineWord name="Projects" colour="#E8E5E5"/>
         </div>
-        <div className="flex-1 flex flex-wrap items-center justify-center space-x-9">
+        <div className="flex-1 flex flex-wrap items-center justify-center space-x-9">       
         {projects.map(a =>(
           <ProjectCard key={a.id} {...a} />
         ))}

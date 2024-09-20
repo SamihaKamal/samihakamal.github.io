@@ -33,8 +33,11 @@ export async function Timeline(){
                     <div className='w-4 h-4 bg-slate-100'></div>
                 </div>
                 </div>
+                
             </div>
-            
+            <div className="absolute text-center bottom-0 left-0 right-0 text-xs text-gray-500">
+                <p>Click the dots on the timeline to find out more!</p>
+            </div>
             
         </div>
     )

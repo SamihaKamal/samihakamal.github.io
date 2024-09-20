@@ -64,7 +64,7 @@ export function ProjectCard({id, name, description, features, github, images}:pr
     return(
         <div>
             <Model/>
-
+            
             <a href="#" onClick={handleClick} className="shadow-2xl relative m-4">
                 <div className="w-80 h-60 mt-4 shadow-md rounded-lg overflow-hidden relative transform transition-transform hover:scale-105 backdrop-blur-lg">
                     <div className="absolute rounded-lg  inset-0 bg-white/40 backdrop-blur-md flex items-center justify-center">

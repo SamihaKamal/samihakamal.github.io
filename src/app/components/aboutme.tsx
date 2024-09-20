@@ -30,7 +30,7 @@ export function AboutMe(){
                     <a href="https://www.linkedin.com/in/samiha-kamal-12b4131b8/">LinkedIn</a>
                 </button>
                 <button className={styles.shared_button} type='button'>
-                    Email
+                    <a href="mailto:samihakamal.7664@gmail.com">Email</a>
                 </button>
                 <button className={styles.shared_button} type='button'>
                     <a href="https://github.com/SamihaKamal">Github</a>
