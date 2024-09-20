@@ -21,7 +21,9 @@ export function Carousel({ images }: CarouselProps) {
 
     const directLinks = images.map(img => {
         const fileId = img.url.match(/\/d\/(.*)\//)?.[1];
-        return fileId ? `https://drive.google.com/uc?export=view&id=${fileId}` : null;
+        const a =  fileId ? `https://drive.google.com/uc?export=view&id=${fileId}` : null;
+        console.log(a);
+        return a;
     });
 
 
@@ -29,6 +31,7 @@ export function Carousel({ images }: CarouselProps) {
         <div>
             <div id="default-carousel" className="relative" data-carousel="static">
                 <div className="overflow-hidden relative rounded-lg ">
+                    
                     {images.map((image, index) => (
                         <div
                             key={index}
