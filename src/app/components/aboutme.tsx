@@ -18,7 +18,7 @@ export function AboutMe(){
                 <a href="/CV.pdf" download="CV.pdf">
                     <button className="align-middle select-none font-sans font-bold text-center uppercase transition-all 
                     disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 border
-                     border-gray-900 text-gray-900 hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85] rounded-full"
+                     border-gray-400 text-gray-900 bg-regal-blue hover:opacity-75 focus:ring focus:ring-slate-300 active:opacity-[0.85] rounded-full"
                     type='button'>Download CV here</button>
                 </a>    
                 <button className={styles.shared_button} type='button'>

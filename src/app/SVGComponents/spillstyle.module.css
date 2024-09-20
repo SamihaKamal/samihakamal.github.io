@@ -1,0 +1,12 @@
+@keyframes ebbFlow {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  
+  .ebbflow {
+    animation: ebbFlow 3s ease-in-out infinite;
+  }

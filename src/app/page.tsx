@@ -36,7 +36,7 @@ export default async function Home() {
       <section id="about" className="flex min-h-screen">
         <div className="flex-1 flex items-center justify-center">
           <Image 
-          className="w-full h-auto max-w-md"
+          className="z-10 w-full h-auto max-w-md"
           width={500}
           height={500}
           src={LinkedInPic}
@@ -44,7 +44,7 @@ export default async function Home() {
           />
         </div>
         <div className="flex-1 flex items-center justify-center p-8">
-          <div className="mr-10">
+          <div className="z-10 mr-10">
             <AboutMe />
           </div>
         </div>

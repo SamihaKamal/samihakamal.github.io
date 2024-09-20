@@ -1,15 +1,20 @@
 "use client"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion";
+import Spill from "../SVGComponents/spill";
 
 export function Animation(){
-    const { scrollYProgress } = useScroll();
+    const { scrollY } = useScroll();
 
-    const width = useTransform(scrollYProgress, [0, 0.2, 0.4, 0.6, 0.8, 1], ["10vw", "50vw", "100vw", "10vw", "50vw", "100vw"]); // Width grows based on scroll
-    const borderRadius = useTransform(scrollYProgress, [0, 1], ["50%", "0%"]);
+    const width = useTransform(scrollY, [0,500,1000,1500,2000,2500], ["200vh", "250vh","300vh", "250vh","200vh", "300vh"]); // Adjust 1000 based on your scroll length
+    const borderRadius = useTransform(scrollY, [0, 1], ["50%", "0%"]);
     return (
         <div>
-             <div className="fixed z-0 bottom-2/4 right-0 flex justify-center items-end">
-                <motion.div style={{width, height: "4rem", borderRadius}} className="w-16 h-16 bg-black rounded-full mb-4"></motion.div>
+            <div className="fixed z-0 top-0 left-[50%] h-screen w-full flex justify-end items-center">             
+                <div style={{ height: "100vh"}} className="items-center flex justify-center">         
+                    <motion.div style={{ width, borderRadius }}>
+                        <Spill />
+                    </motion.div>
+                </div>
             </div>
         </div>
     )

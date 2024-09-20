@@ -14,7 +14,7 @@ export async function Timeline(){
 
     return (
         <div>
-            <div className="absolute bottom-[10rem] left-0 right-0 flex justify-between items-center px-4">
+            <div className="absolute bottom left-0 right-0 flex justify-between items-center px-4">
                 <div className="relative w-full bg-gray-300 h-1">
                 {/* Timeline line */}
                 <div className="absolute inset-0 bg-slate-800 h-1"></div>
