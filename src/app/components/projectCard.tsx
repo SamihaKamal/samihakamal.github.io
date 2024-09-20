@@ -3,7 +3,7 @@ import Image, { getImageProps } from "next/image";
 import LinkedInPic from "../images/LinkedIn Pic.jpg";
 import { Carousel } from "./carousel";
 import { useState } from "react";
-
+import styles from '../css/cardstyle.module.css'
 
 type projectCardProps={
     id: number
@@ -42,12 +42,12 @@ export function ProjectCard({id, name, description, features, github, images}:pr
                         <div className="w-1/2 p-8 flex flex-col justify-between">
                             <div>
                                 <h1 className="mb-4 text-3xl font-extrabold">{name}</h1>
-                                <p className="text-gray-600">{description}</p>
+                                <p className={styles.paragraph}>{description}</p>
                                 <br></br>
                                 <hr />
                                 <br></br>
                                 <h2 className="mb-4 text-2xl font-extrabold">Features</h2>
-                                <p className="text-gray-600">{features}</p>
+                                <p className={styles.paragraph}>{features}</p>
                                 <br></br>
                             </div>
                             <div className="flex space-x-4">
@@ -68,7 +68,7 @@ export function ProjectCard({id, name, description, features, github, images}:pr
             <Model/>
 
             <a href="#" onClick={handleClick} className=" shadow-2xl relative m-4">
-                <div className="w-80 h-60 mt-4 bg-white shadow-md rounded-lg overflow-hidden relative transform transition-transform hover:scale-105">
+                <div className="w-80  h-60 mt-4 bg-white shadow-md rounded-lg overflow-hidden relative transform transition-transform hover:scale-105">
                     <div className="absolute inset-0 bg-raisin flex items-center justify-center">
                         <h3 className="text-white text-center font-bold text-2xl">
                             {name}

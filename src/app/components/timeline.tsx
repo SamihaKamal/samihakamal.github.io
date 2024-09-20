@@ -14,8 +14,9 @@ export async function Timeline(){
 
 
     return (
-        <div>
-            <div className="absolute flex justify-end">
+        <div className="flex flex-col">
+            
+            <div className="absolute flex">
                 <TimelineWord name="Timeline" colour="#723d46"/>
             </div>
             <div className="absolute bottom left-0 right-0 flex justify-between items-center px-4">

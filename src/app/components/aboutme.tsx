@@ -1,4 +1,4 @@
-import styles from './aboutmestyle.module.css';
+import styles from '../css/aboutmestyle.module.css';
 import TimelineWord from '../wordComponents/timelineWord';
 
 export function AboutMe(){

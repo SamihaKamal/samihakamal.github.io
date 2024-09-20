@@ -9,7 +9,7 @@ import { Timeline } from "./components/timeline";
 import { SideNav } from "./components/sidenav";
 import { Animation } from "./components/animation";
 import TimelineWord from "./wordComponents/timelineWord";
-
+import { Star } from "./components/stars";
 
 export default async function Home() {
 
@@ -35,10 +35,13 @@ export default async function Home() {
       </section>
 
       {/* Second Section: Image and Lorem Ipsum + Contact me*/}
-      <section id="about" className="flex min-h-screen">
+      <section id="about" className="relative flex min-h-screen">
+        <div className="absolute inset-0 z-20 pointer-events-none">
+          <Star />
+        </div>
         <div className="flex-1 flex items-center justify-center">
           <Image 
-          className="z-10 w-full h-auto max-w-md"
+          className="z-10 w-auto h-3/5 max-w-md"
           width={500}
           height={500}
           src={LinkedInPic}
@@ -65,7 +68,10 @@ export default async function Home() {
       </section>
 
       {/* Fourth section experience and skills*/}
-      <section id="experience" className="flex min-h-screen">
+      <section id="experience" className="relative flex min-h-screen">
+        <div className="absolute inset-0 z-20 pointer-events-none">
+          <Star />
+        </div>
         <div className="flex-1 flex items-center justify-center">
         <Timeline />
         </div>

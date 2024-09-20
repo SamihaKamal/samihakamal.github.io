@@ -1,4 +1,4 @@
-import styles from './sidenavstyle.module.css';
+import styles from '../css/sidenavstyle.module.css';
 
 export function SideNav() {
     return (
