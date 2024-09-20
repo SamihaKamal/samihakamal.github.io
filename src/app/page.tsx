@@ -10,6 +10,7 @@ import { SideNav } from "./components/sidenav";
 import { Animation } from "./components/animation";
 import TimelineWord from "./wordComponents/timelineWord";
 import { Star } from "./components/stars";
+import Profile from "./SVGComponents/profile"
 
 export default async function Home() {
 
@@ -40,13 +41,7 @@ export default async function Home() {
           <Star />
         </div>
         <div className="flex-1 flex items-center justify-center">
-          <Image 
-          className="z-10 w-auto h-3/5 max-w-md"
-          width={500}
-          height={500}
-          src={LinkedInPic}
-          alt="Picture of myself"
-          />
+         <Profile />
         </div>
         <div className="flex-1 flex items-center justify-center p-8">
           <div className="z-10 mr-10">

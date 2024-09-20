@@ -1,0 +1,20 @@
+@keyframes draw {
+    0% {
+        stroke-dasharray: 1, 3000;
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-dasharray: 3000, 0;
+        stroke-dashoffset: 0;
+    }
+}
+
+.drawingpath {
+    stroke-dasharray: 3000; /* Or the length of the path */
+    stroke-dashoffset: 3000; /* Initial state (not drawn) */
+  }
+  
+  .drawingpath.inview {
+    animation: draw 5s ease forwards;
+  }

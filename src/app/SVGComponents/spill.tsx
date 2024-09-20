@@ -1,5 +1,5 @@
 import * as React from "react"
-import style from "./spillstyle.module.css"
+import style from "../css/spillstyle.module.css"
 import { SVGProps } from "react"
 const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
   <svg
