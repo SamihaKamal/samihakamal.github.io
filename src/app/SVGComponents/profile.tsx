@@ -21,13 +21,14 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => {
            { threshold: 0.5} 
         );
 
-        if (pathRef.current) {
-            observer.observe(pathRef.current)
+        const currentRef = pathRef.current;
+        if (currentRef) {
+            observer.observe(currentRef)
         }
 
         return () => {
-            if (pathRef.current) {
-                observer.unobserve(pathRef.current)
+            if (currentRef) {
+                observer.unobserve(currentRef)
             }
         };
     }, []);
