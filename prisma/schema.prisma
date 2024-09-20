@@ -33,6 +33,7 @@ model Experience {
 model Image {
   id Int @id @default(autoincrement())
   url String
+  name String @default("w")
   project Project @relation(fields: [projectId], references: [id])
   projectId Int
 }

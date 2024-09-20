@@ -11,7 +11,7 @@ type projectCardProps={
     description: string
     features: string
     github: string
-    images: {url: string}[]
+    images: {name: string}[]
 }
 
 
@@ -24,10 +24,8 @@ export function ProjectCard({id, name, description, features, github, images}:pr
         setModalOpen(true);
     };
 
-    const directLinks = images.map(img => {
-        const fileId = img.url.match(/\/d\/(.*)\//)?.[1];
-        return fileId ? `https://drive.google.com/uc?export=view&id=${fileId}` : null;
-    });
+    const imageNames = images.map(images => `/${id}/${images.name}`);
+
 
     function Model(){
         if (!modalOpen) return null;
@@ -37,7 +35,7 @@ export function ProjectCard({id, name, description, features, github, images}:pr
                     <div className="max-h-full w-full max-w-4xl overflow-y-auto sm:rounded-2xl bg-white flex">
                         <div className="w-1/2 flex items-center justify-center p-4">
                             
-                            <Carousel images={images}/>
+                            <Carousel images={imageNames}/>
                         </div>
                         <div className="w-1/2 p-8 flex flex-col justify-between">
                             <div>

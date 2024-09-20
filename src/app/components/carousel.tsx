@@ -2,7 +2,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 type CarouselProps = {
-    images: { url: string }[];
+    images: string[];
 };
 
 export function Carousel({ images }: CarouselProps) {
@@ -19,13 +19,10 @@ export function Carousel({ images }: CarouselProps) {
         setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
     };
 
-    const directLinks = images.map(img => {
-        const fileId = img.url.match(/\/d\/(.*)\//)?.[1];
-        const a =  fileId ? `https://drive.google.com/uc?export=view&id=${fileId}` : null;
-        console.log(a);
+    function checkURL(a: string) {
+        console.log(a)
         return a;
-    });
-
+    }
 
     return (
         <div>
@@ -38,12 +35,12 @@ export function Carousel({ images }: CarouselProps) {
                             className={`duration-700 ease-in-out ${index === currentIndex ? "block" : "hidden"}`}
                             data-carousel-item
                         >
-                            <Image 
+                             <Image
                                 className="w-full h-auto max-w-md"
+                                src={checkURL(image)}
+                                alt={`Image ${index + 1}`}
                                 width={500}
                                 height={500}
-                                src={directLinks[index] as string}
-                                alt={`Image ${index + 1}`}
                             />
                         </div>
                     ))}
