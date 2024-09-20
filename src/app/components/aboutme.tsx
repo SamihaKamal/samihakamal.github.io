@@ -4,17 +4,21 @@ import TimelineWord from '../wordComponents/timelineWord';
 export function AboutMe(){
     return(
         <div className='flex-col'>
-            <p className={styles.paragraph}>My name is Samiha Kamal, I am currently working at FDM in their software engineering graduate
-                programme.
+            <p className={styles.paragraph}>My name is Samiha Kamal, programmer, professional genshin impact player (self proclaimed)
+                 and an all round great person.
             </p>
             <br/>
             <p className={styles.paragraph}>
-                I love to express my creativity through drawings using mediums such as water colour 
-                and inks as well as digital art. I have also taken up knitting and crochet as a 
-                pasttime. It is nice to explore the imaginative side of myself when I work with 
-                logic and computer science everyday.
+                I am someone who isnt restrained and loves to let my creativity go loose, you can never have too much after all! 
+                Painting, crocheting, knitting, something to unwind and distance myself from the logical side that I work with 
+                every day.
             </p>
             <br/>
+            <p className={styles.paragraph}>
+                That doesnt mean I dont like computer science, on contrary I am passionate enough that I thought that I would still love 
+                it even after working within a field and having to deal with all that stress that comes with. And here I am.
+            </p>
+            <br></br>
             <div className='flex justify-center'>
                 <a href="/CV.pdf" download="CV.pdf">
                     <button className="align-middle select-none font-sans font-bold text-center uppercase transition-all 
