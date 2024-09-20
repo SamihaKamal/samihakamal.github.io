@@ -1,12 +1,13 @@
 
 import Image from "next/image";
 import LinkedInPic from "./images/LinkedIn Pic.jpg";
-
+import { motion } from "framer-motion";
 import { prisma } from "@/db";
 import { AboutMe } from "./components/aboutme";
 import { ProjectCard } from "./components/projectCard";
 import { Timeline } from "./components/timeline";
 import { SideNav } from "./components/sidenav";
+import { Animation } from "./components/animation";
 
 export default async function Home() {
 
@@ -21,6 +22,7 @@ export default async function Home() {
   return (
     <div className="bg-regal-blue relative min-h-screen min-w-screen overflow-hidden flex flex-col">
       <SideNav />
+      <Animation />
       {/* First Section: My Portfolio Text and Waves */}
       <section id="home" className="flex flex-col items-center justify-center min-h-screen relative">
         <div className="text-center">
