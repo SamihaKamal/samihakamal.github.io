@@ -63,7 +63,7 @@ export function Bullet({id, role, description, company, from, to, skills}: bulle
         <div>
             <Model />
             <a href="#" onClick={handleModal}>
-                <div className='w-6 h-6 bg-slate-900 rounded-full hover:bg-slate-700'></div>
+                <div className='w-6 h-6 bg-slate-100 rounded-full hover:bg-nice-purple hover:w-8 hover:h-8'></div>
             </a>
         </div>
     )

@@ -19,7 +19,7 @@ export function Animation(){
                 </div>
             </div>
             <div className="fixed z-0 top-0 right-[70%] h-screen w-full flex justify-start items-center">             
-                <div style={{ height: "100vh"}} className="items-center flex justify-center">         
+                <div style={{ height: "100vh"}} className="items-center flex ">         
                     <motion.div style={{ width, borderRadius }}>
                         <Spill />
                     </motion.div>

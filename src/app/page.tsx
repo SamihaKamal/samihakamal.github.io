@@ -8,6 +8,8 @@ import { ProjectCard } from "./components/projectCard";
 import { Timeline } from "./components/timeline";
 import { SideNav } from "./components/sidenav";
 import { Animation } from "./components/animation";
+import TimelineWord from "./wordComponents/timelineWord";
+
 
 export default async function Home() {
 
@@ -27,7 +29,7 @@ export default async function Home() {
       <section id="home" className="flex flex-col items-center justify-center min-h-screen relative">
         <div className="text-center">
           <h1 className="text-9xl font-bold text-slate-300" style={{ fontFamily: "Poppins" }}>
-            My portfolio
+            <TimelineWord name="My Porfolio" colour="#E8E5E5"/>
           </h1>
         </div>
       </section>
@@ -51,7 +53,10 @@ export default async function Home() {
       </section>
 
       {/* Third section projects */}
-      <section id="portfolio" className="flex min-h-screen">
+      <section id="portfolio" className=" flex flex-col min-h-screen relative">
+        <div className="flex items-center justify-center w-full mt-40">
+          <TimelineWord name="Projects" colour="#E8E5E5"/>
+        </div>
         <div className="flex-1 flex flex-wrap items-center justify-center space-x-9">
         {projects.map(a =>(
           <ProjectCard key={a.id} {...a} />

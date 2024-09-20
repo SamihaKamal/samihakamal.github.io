@@ -1,8 +1,9 @@
 import styles from './aboutmestyle.module.css';
+import TimelineWord from '../wordComponents/timelineWord';
 
 export function AboutMe(){
     return(
-        <div>
+        <div className='flex-col'>
             <p className={styles.paragraph}>My name is Samiha Kamal, I am currently working at FDM in their software engineering graduate
                 programme.
             </p>
@@ -31,7 +32,9 @@ export function AboutMe(){
                     <a href="https://github.com/SamihaKamal">Github</a>
                 </button>
             </div>
-            
+            <div className='flex mt-40 mr-8'>
+                <TimelineWord name="About Me" colour="#723d46"/>
+            </div>
             
         </div>
     )
