@@ -24,7 +24,7 @@ export default async function Home() {
  
   return (
     <div className="bg-regal-blue relative min-h-screen min-w-screen overflow-hidden flex flex-col">
-      <SideNav />
+      
       <Animation />
       {/* First Section: My Portfolio Text and Waves */}
       <section id="home" className="flex flex-col items-center justify-center min-h-screen relative">
